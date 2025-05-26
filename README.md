@@ -46,8 +46,8 @@ docker-compose up -d
 
 ## Notes
 
-- You may need API keys or credentials for Datadog, Dynatrace, or New Relic.
-- For Grafana, configure your Prometheus data source manually via the web UI.
+- You may need API keys or credentials for **Datadog**, **Dynatrace**, or **New Relic**.
+- For **Grafana**, configure your **Prometheus** data source manually via the web UI.
 - These projects are for **local testing and learning** only.
 
 ---
