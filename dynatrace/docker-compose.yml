@@ -1,0 +1,10 @@
+version: '3'
+services:
+  dynatrace:
+    image: dynatrace/oneagent
+    environment:
+      - ONEAGENT_INSTALLER_SCRIPT_URL=https://<ENVIRONMENT_ID>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest
+      - DT_API_TOKEN=your_paas_token
+    privileged: true
+    volumes:
+      - /:/mnt/root:ro
