@@ -21,7 +21,6 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Limited long-term storage, lacks native dashboards.
 - **Use When**: You want a fast, open-source, and scalable metric solution.
 
----
 
 ### Grafana
 - **Use For**: Building custom dashboards for metrics and logs.
@@ -29,7 +28,6 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Requires external storage backends.
 - **Use When**: You need a unified dashboard for multi-source observability.
 
----
 
 ### Datadog
 - **Use For**: Full-stack SaaS observability—infra, logs, APM, synthetics.
@@ -37,7 +35,6 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Costly at scale, vendor lock-in.
 - **Use When**: You want instant visibility without managing infrastructure.
 
----
 
 ### Dynatrace
 - **Use For**: AI-powered monitoring with automatic root-cause detection.
@@ -45,7 +42,6 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Enterprise pricing, steeper learning curve.
 - **Use When**: You run critical enterprise systems needing intelligent alerting.
 
----
 
 ### New Relic
 - **Use For**: App performance monitoring, logs, infrastructure.
@@ -53,7 +49,6 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Usage-based pricing, some features gated by plan.
 - **Use When**: You want cloud-native observability with minimal config.
 
----
 
 ### ELK Stack (Elasticsearch, Logstash, Kibana)
 - **Use For**: Centralized log aggregation, searching, and analytics.
