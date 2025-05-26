@@ -11,6 +11,60 @@ This repository provides simple, containerized observability stacks using Docker
 - **New Relic** – Instrumentation of a Node.js app
 - **ELK Stack** – Centralized log aggregation using Elasticsearch, Logstash, and Kibana
 
+---
+
+## Tool Trade-Offs and When to Use
+
+### Prometheus
+- **Use For**: Metrics collection, alerting, and monitoring of cloud-native apps.
+- **Pros**: Lightweight, flexible, excellent Kubernetes integration.
+- **Cons**: Limited long-term storage, lacks native dashboards.
+- **Use When**: You want a fast, open-source, and scalable metric solution.
+
+---
+
+### Grafana
+- **Use For**: Building custom dashboards for metrics and logs.
+- **Pros**: Powerful visualizations, supports many data sources.
+- **Cons**: Requires external storage backends.
+- **Use When**: You need a unified dashboard for multi-source observability.
+
+---
+
+### Datadog
+- **Use For**: Full-stack SaaS observability—infra, logs, APM, synthetics.
+- **Pros**: Easy to set up, rich UI, excellent integrations.
+- **Cons**: Costly at scale, vendor lock-in.
+- **Use When**: You want instant visibility without managing infrastructure.
+
+---
+
+### Dynatrace
+- **Use For**: AI-powered monitoring with automatic root-cause detection.
+- **Pros**: Deep application insights, auto-discovery, Smartscape topology.
+- **Cons**: Enterprise pricing, steeper learning curve.
+- **Use When**: You run critical enterprise systems needing intelligent alerting.
+
+---
+
+### New Relic
+- **Use For**: App performance monitoring, logs, infrastructure.
+- **Pros**: Developer-friendly, unified UI for all telemetry.
+- **Cons**: Usage-based pricing, some features gated by plan.
+- **Use When**: You want cloud-native observability with minimal config.
+
+---
+
+### ELK Stack (Elasticsearch, Logstash, Kibana)
+- **Use For**: Centralized log aggregation, searching, and analytics.
+- **Pros**: Open-source, flexible query & dashboarding.
+- **Cons**: Heavy resource usage, complex scaling.
+- **Use When**: You want a custom, self-hosted logging pipeline.
+
+
+---
+
+
 ## Folder Structure
 
 ```
