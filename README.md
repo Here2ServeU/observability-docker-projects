@@ -1,10 +1,10 @@
-#  Observability Docker Projects
+# Observability Docker Projects
 
 A collection of simple, containerized observability stacks using Docker Compose. Each folder contains an isolated setup to help you experiment with monitoring and logging tools in local environments.
 
 ---
 
-##  Tools Covered
+## Tools Covered
 
 - **Prometheus** – Metrics collection and alerting
 - **Grafana** – Dashboards and visualization for Prometheus and others
@@ -15,7 +15,7 @@ A collection of simple, containerized observability stacks using Docker Compose.
 
 ---
 
-##  Tool Trade-Offs and When to Use
+## Tool Trade-Offs and When to Use
 
 ### Prometheus
 - **Use For**: Metrics collection, alerting, and monitoring of cloud-native apps.
@@ -55,7 +55,7 @@ A collection of simple, containerized observability stacks using Docker Compose.
 
 ---
 
-##  Prerequisites – Installing Docker & Docker Compose
+## Prerequisites – Installing Docker & Docker Compose
 
 ### macOS (Docker Desktop)
 ```bash
@@ -75,8 +75,8 @@ docker --version
 
 ### Docker Compose (Plugin)
 ```bash
-docker-compose version
-docker-compose up -d
+docker compose version
+docker compose up -d
 ```
 
 ### Docker Compose (Legacy Binary)
@@ -111,7 +111,7 @@ docker compose version
 
 ---
 
-##  Folder Structure
+## Folder Structure
 
 ```
 observability-docker-projects/
@@ -120,7 +120,8 @@ observability-docker-projects/
 ├── datadog/
 ├── dynatrace/
 ├── newrelic/
-└── elk/
+├── elk/
+└── ec2-setup/
 ```
 
 Each folder contains:
@@ -130,39 +131,41 @@ Each folder contains:
 
 ---
 
-##  Getting Started
+## Getting Started
 
 ```bash
 cd <tool-name>
-docker-compose up -d
+docker compose up -d
 ```
 
 Example:
 ```bash
 cd prometheus
-docker-compose up -d
+docker compose up -d
 ```
 
 ---
 
-##  Notes
+## EC2 Setup for Cloud Testing
 
-- API keys required for Datadog, Dynatrace, New Relic setups.
-- Grafana requires manual data source setup via UI.
-- For learning/demo purposes only – not hardened for production use.
-
+Included in the `ec2-setup/` folder:
+- `main.tf` – Terraform config to provision an EC2 instance
+- `aws-cli-setup.sh` – AWS CLI script to generate key and launch instance
+- `ssh-access.txt` – SSH access instructions
+- `cleanup.sh` – Scripts to tear down instance and remove local keys
 
 ---
+
 ## Cleanup Instructions
 
 ### Stop and Remove Docker Containers
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Remove All Volumes (Optional – removes stored data)
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ### Prune All Docker Images (Optional)
@@ -172,7 +175,7 @@ docker image prune -a
 
 ---
 
-##  Author: Emmanuel Naweji
+## Author: Emmanuel Naweji
 
 ![AWS Certified](https://img.shields.io/badge/AWS-Certified-blue?logo=amazonaws)
 ![Azure Solutions Architect](https://img.shields.io/badge/Azure-Solutions%20Architect-0078D4?logo=microsoftazure)
@@ -187,4 +190,3 @@ docker image prune -a
 ![Linux](https://img.shields.io/badge/OS-Linux-black?logo=linux)
 ![FinOps](https://img.shields.io/badge/FinOps-Cost%20Optimization-green?logo=money)
 ![OpenAI](https://img.shields.io/badge/AI-OpenAI-ff9900?logo=openai)
-
