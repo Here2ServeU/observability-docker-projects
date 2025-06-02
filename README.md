@@ -59,6 +59,123 @@ This repository provides simple, containerized observability stacks using Docker
 
 ---
 
+## Prerequisites
+# How to Install Docker & Docker Compose (macOS/Linux)
+
+### Step 1: Install Docker
+
+#### macOS (Recommended: Docker Desktop)
+1. Download from: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. Install and follow GUI instructions
+3. Verify installation:
+   ```bash
+   docker --version
+   ```
+
+#### Linux (Ubuntu/Debian)
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+Then verify:
+```bash
+docker --version
+```
+
+### Step 2: Install Docker Compose
+
+#### Option A: Use `docker compose` (v2 Plugin — Recommended)
+Already included with Docker Desktop (v20.10+).
+
+Test it:
+```bash
+docker compose version
+```
+
+Use it like:
+```bash
+docker compose up -d
+```
+
+#### Option B: Install Legacy `docker-compose` (Standalone Binary)
+
+##### 1. **Find your architecture**
+```bash
+uname -m
+```
+
+- `x86_64` → Intel
+- `arm64` → Apple Silicon (M1/M2/M3)
+
+##### 2. **Install Binary**
+##### For **Intel macOS**:
+```bash
+curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-darwin-x86_64 -o ~/bin/docker-compose
+chmod +x ~/bin/docker-compose
+```
+
+###### For **Apple Silicon (M1/M2/M3)**:
+```bash
+curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-darwin-aarch64 -o ~/bin/docker-compose
+chmod +x ~/bin/docker-compose
+```
+
+##### 3. **Update PATH**
+Add to `~/.zshrc` or `~/.bashrc`:
+```bash
+export PATH="$HOME/bin:$PATH"
+```
+Then reload:
+```bash
+source ~/.zshrc
+```
+
+##### 4. **Verify Installation**
+```bash
+docker-compose --version
+```
+
+###  Step 1: Install Docker on Windows
+
+#### Recommended: Docker Desktop for Windows
+1. Download Docker Desktop: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. Requirements:
+   - Windows 10/11 64-bit: Pro, Enterprise, or Education
+   - WSL 2 enabled (for Windows Home edition)
+3. Follow the installer steps and restart your system.
+
+#### Verify Installation
+Open PowerShell or CMD:
+```powershell
+docker --version
+docker compose version
+```
+
+### Step 2: Use Docker Compose
+
+#### `docker compose` (v2 Plugin - Recommended)
+Included with Docker Desktop. Just use:
+```powershell
+docker compose up -d
+```
+
+#### Legacy `docker-compose` (Optional, Not Recommended on Windows)
+If needed for older projects:
+1. Download from [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+2. Add the executable to a directory listed in your system `PATH`
+
+#### Notes for Windows Users
+- Prefer **PowerShell** or **Windows Terminal with WSL2** for CLI work.
+- Enable **WSL2 backend** in Docker Desktop settings for better Linux compatibility.
+
+
+##### Done!
+You can now use Docker and Docker Compose to run containers and orchestrate multi-container apps.
+
+
+---
 
 ## Folder Structure
 
