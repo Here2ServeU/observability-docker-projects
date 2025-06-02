@@ -1,0 +1,7 @@
+# Access your EC2 instance
+chmod 400 monitoring-key.pem
+ssh -i "monitoring-key.pem" ec2-user@<EC2_PUBLIC_IP>
+
+# After login:
+# git clone your monitoring repo
+# docker compose up -d
