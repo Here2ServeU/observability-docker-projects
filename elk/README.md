@@ -10,7 +10,7 @@ This project sets up ELK for centralized logging.
 docker-compose up -d
 ```
 
-2. Logstash listens on port `5000` for logs.
+2. Logstash listens on port `5000` for logs. Change the port number as desired and if 5000 is being used. 
 
 3. Access Kibana: [http://localhost:5601](http://localhost:5601)
 

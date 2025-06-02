@@ -151,6 +151,25 @@ docker compose up -d
 - Grafana requires manual data source setup via UI.
 - For learning/demo purposes only – not hardened for production use.
 
+
+---
+## Cleanup Instructions
+
+### Stop and Remove Docker Containers
+```bash
+docker compose down
+```
+
+### Remove All Volumes (Optional – removes stored data)
+```bash
+docker compose down -v
+```
+
+### Prune All Docker Images (Optional)
+```bash
+docker image prune -a
+```
+
 ---
 
 ##  Author: Emmanuel Naweji
