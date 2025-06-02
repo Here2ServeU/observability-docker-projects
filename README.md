@@ -75,8 +75,8 @@ docker --version
 
 ### Docker Compose (Plugin)
 ```bash
-docker compose version
-docker compose up -d
+docker-compose version
+docker-compose up -d
 ```
 
 ### Docker Compose (Legacy Binary)
@@ -134,13 +134,13 @@ Each folder contains:
 
 ```bash
 cd <tool-name>
-docker compose up -d
+docker-compose up -d
 ```
 
 Example:
 ```bash
 cd prometheus
-docker compose up -d
+docker-compose up -d
 ```
 
 ---
@@ -157,12 +157,12 @@ docker compose up -d
 
 ### Stop and Remove Docker Containers
 ```bash
-docker compose down
+docker-compose down
 ```
 
 ### Remove All Volumes (Optional – removes stored data)
 ```bash
-docker compose down -v
+docker-compose down -v
 ```
 
 ### Prune All Docker Images (Optional)
