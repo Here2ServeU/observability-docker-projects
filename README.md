@@ -1,11 +1,13 @@
-# Observability Docker Projects
+#  Observability Docker Projects
 
-This repository provides simple, containerized observability stacks using Docker Compose. Each folder contains an isolated project with basic monitoring or logging functionality to help you get hands-on experience.
+A collection of simple, containerized observability stacks using Docker Compose. Each folder contains an isolated setup to help you experiment with monitoring and logging tools in local environments.
 
-## Tools Covered
+---
+
+##  Tools Covered
 
 - **Prometheus** – Metrics collection and alerting
-- **Grafana** – Dashboards and visualization for Prometheus
+- **Grafana** – Dashboards and visualization for Prometheus and others
 - **Datadog** – Monitoring Docker containers via Datadog Agent
 - **Dynatrace** – Observability using Dynatrace OneAgent
 - **New Relic** – Instrumentation of a Node.js app
@@ -13,7 +15,7 @@ This repository provides simple, containerized observability stacks using Docker
 
 ---
 
-## Tool Trade-Offs and When to Use
+##  Tool Trade-Offs and When to Use
 
 ### Prometheus
 - **Use For**: Metrics collection, alerting, and monitoring of cloud-native apps.
@@ -21,13 +23,11 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Limited long-term storage, lacks native dashboards.
 - **Use When**: You want a fast, open-source, and scalable metric solution.
 
-
 ### Grafana
 - **Use For**: Building custom dashboards for metrics and logs.
 - **Pros**: Powerful visualizations, supports many data sources.
 - **Cons**: Requires external storage backends.
 - **Use When**: You need a unified dashboard for multi-source observability.
-
 
 ### Datadog
 - **Use For**: Full-stack SaaS observability—infra, logs, APM, synthetics.
@@ -35,13 +35,11 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Costly at scale, vendor lock-in.
 - **Use When**: You want instant visibility without managing infrastructure.
 
-
 ### Dynatrace
 - **Use For**: AI-powered monitoring with automatic root-cause detection.
 - **Pros**: Deep application insights, auto-discovery, Smartscape topology.
 - **Cons**: Enterprise pricing, steeper learning curve.
 - **Use When**: You run critical enterprise systems needing intelligent alerting.
-
 
 ### New Relic
 - **Use For**: App performance monitoring, logs, infrastructure.
@@ -49,135 +47,71 @@ This repository provides simple, containerized observability stacks using Docker
 - **Cons**: Usage-based pricing, some features gated by plan.
 - **Use When**: You want cloud-native observability with minimal config.
 
-
-### ELK Stack (Elasticsearch, Logstash, Kibana)
+### ELK Stack
 - **Use For**: Centralized log aggregation, searching, and analytics.
 - **Pros**: Open-source, flexible query & dashboarding.
 - **Cons**: Heavy resource usage, complex scaling.
 - **Use When**: You want a custom, self-hosted logging pipeline.
 
-
 ---
 
-## Prerequisites
-# How to Install Docker & Docker Compose (macOS/Linux)
+##  Prerequisites – Installing Docker & Docker Compose
 
-### Step 1: Install Docker
+### macOS (Docker Desktop)
+```bash
+brew install --cask docker
+open /Applications/Docker.app
+docker --version
+```
 
-#### macOS (Recommended: Docker Desktop)
-1. Download from: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-2. Install and follow GUI instructions
-3. Verify installation:
-   ```bash
-   docker --version
-   ```
-
-#### Linux (Ubuntu/Debian)
+### Ubuntu/Debian Linux
 ```bash
 sudo apt update
 sudo apt install -y docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
-```
-Then verify:
-```bash
 docker --version
 ```
 
-### Step 2: Install Docker Compose
-
-#### Option A: Use `docker compose` (v2 Plugin — Recommended)
-Already included with Docker Desktop (v20.10+).
-
-Test it:
+### Docker Compose (Plugin)
 ```bash
 docker compose version
-```
-
-Use it like:
-```bash
 docker compose up -d
 ```
 
-#### Option B: Install Legacy `docker-compose` (Standalone Binary)
+### Docker Compose (Legacy Binary)
 
-##### 1. **Find your architecture**
-```bash
-uname -m
-```
-
-- `x86_64` → Intel
-- `arm64` → Apple Silicon (M1/M2/M3)
-
-##### 2. **Install Binary**
-##### For **Intel macOS**:
+#### Intel macOS
 ```bash
 curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-darwin-x86_64 -o ~/bin/docker-compose
 chmod +x ~/bin/docker-compose
 ```
 
-###### For **Apple Silicon (M1/M2/M3)**:
+#### Apple Silicon
 ```bash
 curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-darwin-aarch64 -o ~/bin/docker-compose
 chmod +x ~/bin/docker-compose
 ```
 
-##### 3. **Update PATH**
-Add to `~/.zshrc` or `~/.bashrc`:
+#### Add to PATH
 ```bash
 export PATH="$HOME/bin:$PATH"
-```
-Then reload:
-```bash
 source ~/.zshrc
-```
-
-##### 4. **Verify Installation**
-```bash
 docker-compose --version
 ```
 
-###  Step 1: Install Docker on Windows
-
-#### Recommended: Docker Desktop for Windows
-1. Download Docker Desktop: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-2. Requirements:
-   - Windows 10/11 64-bit: Pro, Enterprise, or Education
-   - WSL 2 enabled (for Windows Home edition)
-3. Follow the installer steps and restart your system.
-
-#### Verify Installation
-Open PowerShell or CMD:
+### Windows
+- Download Docker Desktop: https://www.docker.com/products/docker-desktop
+- Requirements: WSL2, Windows 10+ (Pro or Home)
+- After install:
 ```powershell
 docker --version
 docker compose version
 ```
 
-### Step 2: Use Docker Compose
-
-#### `docker compose` (v2 Plugin - Recommended)
-Included with Docker Desktop. Just use:
-```powershell
-docker compose up -d
-```
-
-#### Legacy `docker-compose` (Optional, Not Recommended on Windows)
-If needed for older projects:
-1. Download from [https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
-2. Add the executable to a directory listed in your system `PATH`
-
-#### Notes for Windows Users
-- Prefer **PowerShell** or **Windows Terminal with WSL2** for CLI work.
-- Enable **WSL2 backend** in Docker Desktop settings for better Linux compatibility.
-
-
-##### Done!
-You can now use Docker and Docker Compose to run containers and orchestrate multi-container apps.
-
-
 ---
 
-## Folder Structure
+##  Folder Structure
 
 ```
 observability-docker-projects/
@@ -189,40 +123,37 @@ observability-docker-projects/
 └── elk/
 ```
 
-Each subdirectory includes:
-- `docker-compose.yml` file
-- Any required configuration (e.g., Prometheus config, Logstash pipeline)
-- A `README.md` with setup steps
+Each folder contains:
+- `docker-compose.yml`
+- Tool-specific configs (e.g., `prometheus.yml`, `logstash.conf`)
+- A `README.md` with usage instructions
 
-## Getting Started
+---
 
-To run a project:
+##  Getting Started
 
 ```bash
 cd <tool-name>
-docker-compose up -d
+docker compose up -d
 ```
 
 Example:
-
 ```bash
 cd prometheus
-docker-compose up -d
+docker compose up -d
 ```
 
-## Notes
+---
 
-- You may need API keys or credentials for **Datadog**, **Dynatrace**, or **New Relic**.
-- For **Grafana**, configure your **Prometheus** data source manually via the web UI.
-- These projects are for **local testing and learning** only.
+##  Notes
+
+- API keys required for Datadog, Dynatrace, New Relic setups.
+- Grafana requires manual data source setup via UI.
+- For learning/demo purposes only – not hardened for production use.
 
 ---
 
-Happy Monitoring!
-
-
----
-By Emmanuel Naweji
+##  Author: Emmanuel Naweji
 
 ![AWS Certified](https://img.shields.io/badge/AWS-Certified-blue?logo=amazonaws)
 ![Azure Solutions Architect](https://img.shields.io/badge/Azure-Solutions%20Architect-0078D4?logo=microsoftazure)
@@ -237,3 +168,4 @@ By Emmanuel Naweji
 ![Linux](https://img.shields.io/badge/OS-Linux-black?logo=linux)
 ![FinOps](https://img.shields.io/badge/FinOps-Cost%20Optimization-green?logo=money)
 ![OpenAI](https://img.shields.io/badge/AI-OpenAI-ff9900?logo=openai)
+
